@@ -1,0 +1,9 @@
+:root {
+    --single: 8px;
+    --double: 16px;
+    --triple: 24px;
+}
+
+.header {
+    padding: var(--double);
+}

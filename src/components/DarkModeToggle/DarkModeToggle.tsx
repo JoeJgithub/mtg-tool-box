@@ -6,16 +6,12 @@ interface DarkModeToggleProps {
 }
 
 export function DarkModeToggle(props: DarkModeToggleProps) {
-  const { colorScheme, setColorScheme } = useMantineColorScheme();
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
   const { size } = props;
 
   return (
-    <ActionIcon {...{ size }}>
-      {colorScheme === 'light' ? (
-        <MdDarkMode onClick={() => setColorScheme('dark')} />
-      ) : (
-        <MdOutlineDarkMode onClick={() => setColorScheme('light')} />
-      )}
+    <ActionIcon {...{ size }} onClick={toggleColorScheme}>
+      {colorScheme === 'light' ? <MdDarkMode /> : <MdOutlineDarkMode />}
     </ActionIcon>
   );
 }

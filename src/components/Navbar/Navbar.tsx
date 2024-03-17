@@ -17,7 +17,7 @@ interface NavbarItem {
 const data: NavbarItem[] = [
   { route: '/', label: 'Home', icon: FaHome, iconColor: 'blue' },
   { route: '/stickers', label: 'Stickers & Attractions', icon: GiGoblinHead, iconColor: 'green' },
-  { route: '/rules', label: 'Rule Finder', icon: GiRuleBook, iconColor: 'gray' },
+  { route: '/rules', label: 'Rules Finder', icon: GiRuleBook, iconColor: 'gray' },
 ];
 
 export function Navbar() {

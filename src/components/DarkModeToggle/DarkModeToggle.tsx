@@ -1,11 +1,16 @@
-import { ActionIcon, Button, Group, useMantineColorScheme } from '@mantine/core';
+import { ActionIcon, useMantineColorScheme } from '@mantine/core';
 import { MdDarkMode, MdOutlineDarkMode } from 'react-icons/md';
 
-export function DarkModeToggle(props: { size: string }) {
+interface DarkModeToggleProps {
+  size: string;
+}
+
+export function DarkModeToggle(props: DarkModeToggleProps) {
   const { colorScheme, setColorScheme } = useMantineColorScheme();
+  const { size } = props;
 
   return (
-    <ActionIcon {...{ props }}>
+    <ActionIcon {...{ size }}>
       {colorScheme === 'light' ? (
         <MdDarkMode onClick={() => setColorScheme('dark')} />
       ) : (

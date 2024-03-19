@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Group, Title, Image, useMantineColorScheme } from '@mantine/core';
+import { Group, Title, Image } from '@mantine/core';
 import { GiGoblinHead, GiRuleBook } from 'react-icons/gi';
 import { FaHome } from 'react-icons/fa';
 import type { IconType } from 'react-icons';
@@ -11,17 +11,16 @@ interface NavbarItem {
   route: string;
   label: string;
   icon: IconType;
-  iconColor: string;
+  iconClass: string;
 }
 
 const data: NavbarItem[] = [
-  { route: '/', label: 'Home', icon: FaHome, iconColor: 'blue' },
-  { route: '/stickers', label: 'Stickers & Attractions', icon: GiGoblinHead, iconColor: 'green' },
-  { route: '/rules', label: 'Rules Finder', icon: GiRuleBook, iconColor: 'gray' },
+  { route: '/', label: 'Home', icon: FaHome, iconClass: classes.homeNavIcon },
+  { route: '/stickers', label: 'Stickers & Attractions', icon: GiGoblinHead, iconClass: classes.stickersNavIcon },
+  { route: '/rules', label: 'Rules Finder', icon: GiRuleBook, iconClass: classes.rulesNavIcon },
 ];
 
 export function Navbar() {
-  const { colorScheme } = useMantineColorScheme();
   const [active, setActive] = useState('Home');
   const navigate = useNavigate();
   const handleClick = (item: NavbarItem) => {
@@ -42,8 +41,7 @@ export function Navbar() {
       }}
     >
       <item.icon
-        color={(colorScheme === 'dark' ? 'light' : '') + item.iconColor}
-        className={classes.linkIcon}
+        className={`${classes.linkIcon} ${item.iconClass}`}
         stroke="1.5"
       />
       <span>{item.label}</span>

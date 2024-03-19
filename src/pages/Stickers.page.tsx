@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Group, Text, Code, rem } from '@mantine/core';
 import { useMove } from '@mantine/hooks';
+import { StickerCard } from '@/components/Stickers/StickerCard';
 
 export function StickerPage() {
   const [value, setValue] = useState({ x: 0.2, y: 0.6 });
@@ -12,8 +13,8 @@ export function StickerPage() {
         <div
           ref={ref}
           style={{
-            width: rem(400),
-            height: rem(120),
+            width: rem(800),
+            height: rem(400),
             backgroundColor: 'var(--mantine-color-blue-light)',
             position: 'relative',
           }}
@@ -35,6 +36,7 @@ export function StickerPage() {
       <Text ta="center" mt="sm">
         Values <Code>{`{ x: ${Math.round(value.x * 100)}, y: ${Math.round(value.y * 100)} }`}</Code>
       </Text>
+      <StickerCard />
     </>
   );
 }

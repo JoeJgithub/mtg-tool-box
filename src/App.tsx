@@ -2,6 +2,8 @@ import { AppShell, Burger, Flex, MantineProvider } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
+import { Notifications } from '@mantine/notifications';
 import classes from './App.module.css';
 import { theme } from './theme';
 import { DarkModeToggle } from './components/DarkModeToggle/DarkModeToggle';
@@ -15,6 +17,7 @@ export default function App() {
 
   return (
     <MantineProvider theme={theme}>
+      <Notifications />
       <BrowserRouter>
         <AppShell
           header={{ height: 60 }}

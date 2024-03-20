@@ -1,0 +1,16 @@
+.buttonGroup {
+  margin-bottom: rem(12);
+}
+
+.stickerDeckButton {
+  width: rem(160);
+}
+
+.deckBuilderTitle {
+  text-align: center;
+  margin-bottom: rem(12);
+}
+
+.deckBuilderCollapsible {
+  background-color: light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-6));
+}

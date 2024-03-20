@@ -1,6 +1,7 @@
 .stickerCard {
+  border: rem(8) solid black;
   border-radius: 1vmin;
-  height: rem(170);
-  width: rem(120);
+  height: rem(200);
+  width: rem(155);
   padding: var(--single);
 }
